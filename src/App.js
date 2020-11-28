@@ -2,8 +2,8 @@
 // import ColorPicker from './components/ColorPicker';
 // import ColorPickerModule from './components/ColorPickerModule';
 // import Alert from './components/Alert';
-// import Box from './components/Box';
-// import Container from './components/Container';
+import Box from './components/Box';
+import Container from './components/Container';
 // import Section from './components/Section';
 // import paintings from './paintings.json';
 
@@ -21,11 +21,11 @@ function App() {
     <div>
       {/* <ColorPicker options={colorPickerOptions} /> */}
       {/* <ColorPickerModule options={colorPickerOptions} /> */}
-      {/* <Container>
+      <Container>
         <Box type="small" bgColor="red" />
         <Box type="medium" classNames="big red" />
         <Box type="large" styles={{ color: '#fff' }} />
-      </Container> */}
+      </Container>
       {/* <Container>
         <Alert text="Warning" type="success" />
         <Alert text="Warning" type="warning" />
