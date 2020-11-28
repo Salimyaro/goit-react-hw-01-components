@@ -1,42 +1,30 @@
-// import PaintingsList from './components/PaintingsList';
-// import ColorPicker from './components/ColorPicker';
-// import ColorPickerModule from './components/ColorPickerModule';
-// import Alert from './components/Alert';
-import Box from './components/Box';
 import Container from './components/Container';
-// import Section from './components/Section';
-// import paintings from './paintings.json';
+import Profile from './components/Profile';
+import Statistics from './components/Statistics';
+import FriendList from './components/FriendList';
+import TransactionHistory from './components/TransactionHistory';
 
-// const colorPickerOptions = [
-//   { label: 'red', color: '#f44336' },
-//   { label: 'green', color: '#4CAF50' },
-//   { label: 'blue', color: '#2196f3' },
-//   { label: 'grey', color: '#607d8b' },
-//   { label: 'pink', color: '#e91e63' },
-//   { label: 'indigo', color: '#3f51b5' },
-// ];
+import user from './user.json';
+import statisticalData from './statistical-data.json';
+import statisticalData2 from './statistical-data2.json';
+import friends from './friends.json';
+import transactions from './transactions.json';
 
 function App() {
   return (
-    <div>
-      {/* <ColorPicker options={colorPickerOptions} /> */}
-      {/* <ColorPickerModule options={colorPickerOptions} /> */}
-      <Container>
-        <Box type="small" bgColor="red" />
-        <Box type="medium" classNames="big red" />
-        <Box type="large" styles={{ color: '#fff' }} />
-      </Container>
-      {/* <Container>
-        <Alert text="Warning" type="success" />
-        <Alert text="Warning" type="warning" />
-        <Alert text="Warning" type="error" />
-      </Container> */}
-      {/* <PaintingsList items={paintings} /> */}
-      {/* <Section title="top of the week">
-        <PaintingsList items={paintings} />
-      </Section>
-      <Section /> */}
-    </div>
+    <Container>
+      <Profile
+        name={user.name}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      <Statistics title="Upload stats" stats={statisticalData} />
+      <Statistics stats={statisticalData2} />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </Container>
   );
 }
 
