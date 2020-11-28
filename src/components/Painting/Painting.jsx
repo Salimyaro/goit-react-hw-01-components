@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
+import s from './Painting.module.css';
+import defaultImg from './cat.jpg';
 
-import defaultImg from '../cat.jpg';
-
-export default function Painting({
+function Painting({
   url = defaultImg,
   title,
   authorTag = 'no name',
@@ -11,7 +11,7 @@ export default function Painting({
   quantity,
 }) {
   return (
-    <div>
+    <div className={s.container}>
       <img src={url ?? defaultImg} alt={title} width="480" />
       <h2>{title}</h2>
       <p>
@@ -31,3 +31,5 @@ Painting.propTypes = {
   price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
 };
+
+export default Painting;
