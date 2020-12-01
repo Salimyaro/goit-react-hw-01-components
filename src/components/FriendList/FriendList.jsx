@@ -7,9 +7,12 @@ function FriendList({ friends }) {
   return (
     <ul className={s.friendList}>
       {friends.map(({ avatar, name, isOnline, id }) => (
-        <li key={id}>
-          <FriendListItem avatar={avatar} name={name} isOnline={isOnline} />
-        </li>
+        <FriendListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+        />
       ))}
     </ul>
   );
@@ -18,6 +21,9 @@ FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+      isOnline: PropTypes.bool,
     }),
   ),
 };
